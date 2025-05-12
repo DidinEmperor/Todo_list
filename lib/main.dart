@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,16 +11,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Pertama',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Halo Flutter!'),
+      title: 'Aplikasi Flutter',
+      theme: ThemeData(
+        primarySwatch: Colors.blue, // Warna utama aplikasi
+        scaffoldBackgroundColor: Colors.white, // Warna latar belakang Scaffold
+        fontFamily: 'Roboto', // Font global
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(fontSize: 18.0, color: Colors.black87),
+          titleLarge: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
         ),
-        body: const Center(
-          child: Text('Selamat Belajar Flutter!'),
+        appBarTheme: const AppBarTheme(
+          color: Colors.blue, // Warna app bar
+          titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
+      home: const HomePage(),
     );
   }
 }
